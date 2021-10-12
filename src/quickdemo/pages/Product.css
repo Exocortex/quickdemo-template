@@ -1,0 +1,57 @@
+.player{
+    touch-action: none;
+}
+
+.stage {
+    display: flex;
+    /* height: 330px; */
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    top: 40%;
+
+}
+
+:not(:root):fullscreen::backdrop {
+    background: white !important;
+  }
+
+.hand {
+    align-self: flex-end;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-color: #78c4a2;
+    margin: 0 auto 0 auto;
+    border-radius: 25px;
+    opacity: .6;
+    padding: 5px;
+    z-index: 10;
+    transform-origin: bottom;
+    position: relative;
+  
+}
+
+.bounce-2 {
+    animation-name: bounce-2;
+    animation-timing-function: ease;
+}
+
+@keyframes bounce-2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+#threekit-container{
+    cursor: -webkit-grab; 
+    cursor: grab;
+}

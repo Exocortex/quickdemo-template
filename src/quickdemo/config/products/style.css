@@ -1,0 +1,19 @@
+input::-webkit-color-swatch {
+    border: none;
+}
+
+.kitchenForm{
+    margin: 10px;
+}
+
+#aidColor{
+    width: 30px;
+    height: 30px;
+    padding: 0px;
+    border: none;
+    border-radius: 2px;
+}
+
+.formTitle{
+    font-weight: bold;
+}
