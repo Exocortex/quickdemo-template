@@ -1,0 +1,25 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use Camera" />
+
+## Use Camera
+
+The `useCamera` hook allows us to use the reserved metadata camera attribute.
+
+The hook will return an array of two items. The first is the camera attributes data, which includes the options available and selected. The second item is the change handler, which allows us to change the active camera.
+
+```jsx
+import { useCamera } from 'threekit/hooks';
+
+const Component = () => {
+  const [cameraAttribute, handleCameraSelect] = useCamera();
+
+  return (
+    <div>
+      {cameraAttribute.values.map(el => (
+        <button onClick={() => handleCameraSelect(el.value)}>{el.labe}</button>}
+      ))}
+    </div>
+  );
+};
+```

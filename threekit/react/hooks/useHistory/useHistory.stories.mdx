@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use History" />
+
+## Use History
+
+The `useHistory` hook allows us to step forward and backward in our configuration history
+
+The hook returns a function that takes the value we want to step in our history, where negative numbers step us backward (undo) and positive numbers step us forward (redo) assuming we have already stepped back in the history.
+
+```jsx
+import { useHistory } from 'threekit/hooks';
+
+const Component = () => {
+  const stepHistory = useHistory();
+
+  const handleUndo = () => {
+    stepHistory(-1);
+  };
+
+  const handleRedo = () => {
+    stepHistory(1);
+  };
+
+  return (
+    <div>
+      <button onClick={handleUndo}>Click to Undo</button>
+      <button onClick={handleRedo}>Click to Redo</button>
+    </div>
+  );
+};
+```

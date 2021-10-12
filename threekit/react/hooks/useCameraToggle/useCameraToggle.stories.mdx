@@ -1,0 +1,27 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use Camera Toggle" />
+
+## Use Camera Toggle
+
+The `useCameraToggle` hook allows us to toggle through a list of camera options using the reserved camera attribute.
+
+The hook will return an array of two items. The first is the camera attributes data, which includes the options available and selected. This list can be filtered by providing a list of allowed cameras as a property in the hook's config object - `{ cameras: ['Camera 1', 'Camera 2']}`.
+
+The second item is the step change handler where calling the function will update the camera to the next one in the list, looping around if its at the end.
+
+```jsx
+import { useCameraToggle } from 'threekit/hooks';
+
+const Component = () => {
+  const [cameraAttribute, handleCameraSelect] = useCameraToggle();
+
+  return (
+    <div>
+      {cameraAttribute.values.map(el => (
+        <button onClick={() => handleCameraSelect(el.value)}>{el.labe}</button>}
+      ))}
+    </div>
+  );
+};
+```

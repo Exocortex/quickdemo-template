@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use Metadata" />
+
+## Use Metadata
+
+The `useMetadata` hook provides the metadata present on the item used to initialize the player.
+
+The hook returns an object with the metadata.
+
+It is used to build the [Description Display component](#description)
+
+```jsx
+import { useMetadata } from 'threekit/hooks';
+
+const MetadataComponent = () => {
+  const metadata = useMetadata();
+  return (
+    <div>
+      {Object.entries(metadata).map(([key, value], i) => (
+        <div>
+          {key}: {value}
+        </div>
+      ))}
+    </div>
+  );
+};
+```

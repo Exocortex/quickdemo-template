@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use Attributes" />
+
+## Use Attributes
+
+The `useAttributes` hook allows us to connect to all our attributes in the intialized item's configurator.
+
+The hook returns an array of two items. The first item is almost identical to the value returned by `getDisplayAttributes()`. The second item is a change handler function that passes the value passed in straight through to `setConfiguration()`.
+
+```jsx
+import { useAttributes } from 'threekit/hooks';
+
+const AttributeComponent = () => {
+  const [attributes, setConfiguration] = useAttributes();
+  return <div>Attributes Component example</div>;
+};
+```

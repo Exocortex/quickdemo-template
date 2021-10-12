@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use Nested Configurator" />
+
+## Use Nested Configurator
+
+The `useNestedConfigurator` allows us to interact with the configurator of an Item that is nested as the selection on an attribute. For example, if the there is a part-reference type attribute where each of the values (items) have their own configurators, the useNestedConfigurator() hook can be used to target the configurator of the selected value (item).
+
+The hook returns an array of four items, in order:
+
+- `attributes` - The Attributes found in the nested configurator
+- `address` - The attributes address of the nested configurator.
+- `handleSelectAttribute` - To update the address for which attribute's selection to target
+- `handleSetConfiguration` - A change handler to update the value of an attribute in the nested configurator. This functions identically to the change handler on the [useAttribute() hook](#use-attribute).
+
+```jsx
+import { useNestedConfigurator } from 'threekit/hooks';
+
+const AttributeComponent = () => {
+  const [
+    attributes,
+    address,
+    handleSelectAttribute,
+    handleSetConfiguration,
+  ] = useNestedConfigurator('Attribute Name');
+
+  const selected = attribute.value;
+
+  return <div>Nested Configurator</div>;
+};
+```

@@ -1,0 +1,20 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use Name" />
+
+## Use Name
+
+The `useName` hook provides the name of the item used to initialize the player.
+
+The hook a single string value.
+
+It is used to build the [Title Display component](#title)
+
+```jsx
+import { useName } from 'threekit/hooks';
+
+const TitleComponent = () => {
+  const name = useName();
+  return <div>{name}</div>;
+};
+```

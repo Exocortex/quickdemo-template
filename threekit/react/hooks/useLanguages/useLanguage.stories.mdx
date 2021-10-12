@@ -1,0 +1,22 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use Langauges" />
+
+## Use Langauges
+
+The `useLanguages` hook allows us to select and update the language we want our Threekit sourced data (i.e the configurator) to be displayed in.
+
+The hook returns an array that includes, respectively, the selected language, an array of language options (strings) and a change handler for updating the language.
+
+It is used to build the [LanguageSelector Widget](#language-selector)
+
+**Note: The languages have to be defined and populated in your org on the Threekit Platform.**
+
+```jsx
+import { useLanguages } from 'threekit/hooks';
+
+const LanguageSelector = () => {
+  const [selected, options, handleChange] = useLanguages();
+  return <div>// Any custom component to use languages</div>;
+};
+```

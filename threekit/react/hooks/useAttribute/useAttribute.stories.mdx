@@ -1,0 +1,32 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use Attribute" />
+
+## Use Attribute
+
+The `useAttribute` hook allows us to connect a component to an Attribute in our configurator.
+
+It takes the name of the attribute that you want to interact with and returns an array where the first element is the data for that attribute, as returned by the `getDisplayAttributes()` function, and the second element is a function that can be used to update the value of that attribute, by prepping and passing the value on to `setConfiguration()`.
+
+```jsx
+import { useAttribute } from 'threekit/hooks';
+
+const AttributeComponent = () => {
+  const [attribute, setAttribute] = useAttribute('Attribute Name');
+
+  const selected = attribute.value;
+
+  return (
+    <div>
+      <div>{attribute.name}</div>
+      <div>
+        {attribute.values.map((option, i) => (
+          <div key={i} onClick={setAttribute(option.assetId)}>
+            {option.label}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+```

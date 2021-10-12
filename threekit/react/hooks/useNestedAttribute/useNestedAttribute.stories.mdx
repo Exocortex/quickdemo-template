@@ -1,0 +1,30 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+
+<Meta title="Hooks/Use Nested Attribute" />
+
+## Use Nested Attribute
+
+The `useNestedAttribute` hook allows us to connect a component to an Attribute in the active nested configurator. Except for targetting the nested configurator, it works identically to the [useAttribute() hook](#use-attribute).
+
+```jsx
+import { useNestedAttribute } from 'threekit/hooks';
+
+const AttributeComponent = () => {
+  const [attribute, setAttribute] = useNestedAttribute('Attribute Name');
+
+  const selected = attribute.value;
+
+  return (
+    <div>
+      <div>{attribute.name}</div>
+      <div>
+        {attribute.values.map((option, i) => (
+          <div key={i} onClick={setAttribute(option.assetId)}>
+            {option.label}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+```
