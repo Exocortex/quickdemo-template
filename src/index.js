@@ -8,7 +8,7 @@ const Project = () => {
   const config = Object.assign(
     {},
     process.env.NODE_ENV === 'development'
-      ? { publishStage: 'draft' }
+      ? { publishStage: 'published' }
       : undefined
   );
 
