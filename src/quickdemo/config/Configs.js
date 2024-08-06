@@ -8,9 +8,9 @@ const ProductList = {
     type: "3D",
     imageURL:
       "https://images-na.ssl-images-amazon.com/images/I/61CVcwZ4SrL._SL1500_.jpg",
-    threekit: "20c9764a-51a1-46d5-afe7-b04c016c17b3",
+    threekit: "128d9388-c93f-4843-930c-45ba84c73851",
     name: "Stand Up Mixer",
-    scene: "4e27bf05-52f3-42eb-9d95-7501e1bd9f08",
+    scene: "",
     initialConfig: {},
     showAR: true,
     showConfig: false,
